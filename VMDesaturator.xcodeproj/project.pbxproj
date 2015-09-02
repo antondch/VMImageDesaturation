@@ -49,9 +49,9 @@
 		406E76CC1B9633AA00169593 /* VMPicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMPicSearchViewController.h; path = picSearch/VMPicSearchViewController.h; sourceTree = "<group>"; };
 		406E76CD1B9633AA00169593 /* VMPicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMPicSearchViewController.m; path = picSearch/VMPicSearchViewController.m; sourceTree = "<group>"; };
 		406E76CE1B9633AA00169593 /* VMPicSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VMPicSearchViewController.xib; path = picSearch/VMPicSearchViewController.xib; sourceTree = "<group>"; };
-		406E76D21B9635EA00169593 /* VMDesaturationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMDesaturationViewController.h; path = desaturation/VMDesaturationViewController.h; sourceTree = "<group>"; };
-		406E76D31B9635EA00169593 /* VMDesaturationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMDesaturationViewController.m; path = desaturation/VMDesaturationViewController.m; sourceTree = "<group>"; };
-		406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VMDesaturationViewController.xib; path = desaturation/VMDesaturationViewController.xib; sourceTree = "<group>"; };
+		406E76D21B9635EA00169593 /* VMDesaturationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMDesaturationViewController.h; sourceTree = "<group>"; };
+		406E76D31B9635EA00169593 /* VMDesaturationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMDesaturationViewController.m; sourceTree = "<group>"; };
+		406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMDesaturationViewController.xib; sourceTree = "<group>"; };
 		406E76DA1B9636AE00169593 /* VMImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageService.h; path = services/getImage/VMImageService.h; sourceTree = "<group>"; };
 		406E76DB1B9636AE00169593 /* VMImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMImageService.m; path = services/getImage/VMImageService.m; sourceTree = "<group>"; };
 		406E76DD1B96393B00169593 /* VMImageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageResponse.h; path = services/getImage/VMImageResponse.h; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				406E76D71B96362E00169593 /* services */,
-				406E76D11B9635B400169593 /* desaturation */,
+				406E76D11B9635B400169593 /* collection */,
 				406E76C31B96325100169593 /* picSearch */,
 				406E76A11B96314B00169593 /* AppDelegate.h */,
 				406E76A21B96314B00169593 /* AppDelegate.m */,
@@ -149,14 +149,14 @@
 			name = picSearch;
 			sourceTree = "<group>";
 		};
-		406E76D11B9635B400169593 /* desaturation */ = {
+		406E76D11B9635B400169593 /* collection */ = {
 			isa = PBXGroup;
 			children = (
 				406E76D21B9635EA00169593 /* VMDesaturationViewController.h */,
 				406E76D31B9635EA00169593 /* VMDesaturationViewController.m */,
 				406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */,
 			);
-			name = desaturation;
+			path = collection;
 			sourceTree = "<group>";
 		};
 		406E76D71B96362E00169593 /* services */ = {
