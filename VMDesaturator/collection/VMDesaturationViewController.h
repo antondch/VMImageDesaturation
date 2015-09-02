@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VMImageProfile.h"
 
-@interface VMDesaturationViewController : UIViewController
-
+@interface VMDesaturationViewController : UICollectionViewController{
+    UICollectionView *collectionViewThumbnails;
+    NSArray *_imageProfiles;
+}
+@property (nonatomic, strong) NSArray *imageProfiles;
 @end

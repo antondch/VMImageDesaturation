@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		402947361B976C8300962B1A /* VMImageProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 402947351B976C8300962B1A /* VMImageProfile.m */; };
+		402947391B97852B00962B1A /* VMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 402947381B97852B00962B1A /* VMCollectionViewCell.m */; };
 		406E76A01B96314B00169593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E769F1B96314B00169593 /* main.m */; };
 		406E76A31B96314B00169593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76A21B96314B00169593 /* AppDelegate.m */; };
 		406E76AB1B96314B00169593 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406E76AA1B96314B00169593 /* Images.xcassets */; };
@@ -16,7 +17,6 @@
 		406E76CF1B9633AA00169593 /* VMPicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76CD1B9633AA00169593 /* VMPicSearchViewController.m */; };
 		406E76D01B9633AA00169593 /* VMPicSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406E76CE1B9633AA00169593 /* VMPicSearchViewController.xib */; };
 		406E76D51B9635EA00169593 /* VMDesaturationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76D31B9635EA00169593 /* VMDesaturationViewController.m */; };
-		406E76D61B9635EA00169593 /* VMDesaturationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */; };
 		406E76DC1B9636AE00169593 /* VMImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76DB1B9636AE00169593 /* VMImageService.m */; };
 		406E76DF1B96393B00169593 /* VMImageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76DE1B96393B00169593 /* VMImageResponse.m */; };
 		406E76E21B96408000169593 /* VMGoogleImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76E11B96408000169593 /* VMGoogleImageService.m */; };
@@ -36,6 +36,8 @@
 /* Begin PBXFileReference section */
 		402947341B976C8300962B1A /* VMImageProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageProfile.h; path = services/getImage/VMImageProfile.h; sourceTree = "<group>"; };
 		402947351B976C8300962B1A /* VMImageProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMImageProfile.m; path = services/getImage/VMImageProfile.m; sourceTree = "<group>"; };
+		402947371B97852B00962B1A /* VMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMCollectionViewCell.h; sourceTree = "<group>"; };
+		402947381B97852B00962B1A /* VMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCollectionViewCell.m; sourceTree = "<group>"; };
 		406E769A1B96314B00169593 /* VMDesaturator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMDesaturator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		406E769E1B96314B00169593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406E769F1B96314B00169593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +53,6 @@
 		406E76CE1B9633AA00169593 /* VMPicSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VMPicSearchViewController.xib; path = picSearch/VMPicSearchViewController.xib; sourceTree = "<group>"; };
 		406E76D21B9635EA00169593 /* VMDesaturationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMDesaturationViewController.h; sourceTree = "<group>"; };
 		406E76D31B9635EA00169593 /* VMDesaturationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMDesaturationViewController.m; sourceTree = "<group>"; };
-		406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMDesaturationViewController.xib; sourceTree = "<group>"; };
 		406E76DA1B9636AE00169593 /* VMImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageService.h; path = services/getImage/VMImageService.h; sourceTree = "<group>"; };
 		406E76DB1B9636AE00169593 /* VMImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMImageService.m; path = services/getImage/VMImageService.m; sourceTree = "<group>"; };
 		406E76DD1B96393B00169593 /* VMImageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageResponse.h; path = services/getImage/VMImageResponse.h; sourceTree = "<group>"; };
@@ -154,7 +155,8 @@
 			children = (
 				406E76D21B9635EA00169593 /* VMDesaturationViewController.h */,
 				406E76D31B9635EA00169593 /* VMDesaturationViewController.m */,
-				406E76D41B9635EA00169593 /* VMDesaturationViewController.xib */,
+				402947371B97852B00962B1A /* VMCollectionViewCell.h */,
+				402947381B97852B00962B1A /* VMCollectionViewCell.m */,
 			);
 			path = collection;
 			sourceTree = "<group>";
@@ -264,7 +266,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				406E76D61B9635EA00169593 /* VMDesaturationViewController.xib in Resources */,
 				406E76AE1B96314B00169593 /* LaunchScreen.xib in Resources */,
 				406E76D01B9633AA00169593 /* VMPicSearchViewController.xib in Resources */,
 				406E76AB1B96314B00169593 /* Images.xcassets in Resources */,
@@ -291,6 +292,7 @@
 				406E76CF1B9633AA00169593 /* VMPicSearchViewController.m in Sources */,
 				406E76DF1B96393B00169593 /* VMImageResponse.m in Sources */,
 				406E76E51B96439100169593 /* VMGoogleImageResponse.m in Sources */,
+				402947391B97852B00962B1A /* VMCollectionViewCell.m in Sources */,
 				406E76D51B9635EA00169593 /* VMDesaturationViewController.m in Sources */,
 				406E76DC1B9636AE00169593 /* VMImageService.m in Sources */,
 				406E76A01B96314B00169593 /* main.m in Sources */,

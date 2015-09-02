@@ -37,7 +37,9 @@
                 for(id result in results){
                    VMImageProfile *profile = [[VMImageProfile alloc]init];
                    profile.title = [result valueForKey:@"title"];
-                   profile.url = [NSURL URLWithString:[result valueForKey:@"url"]];
+                   NSString *originalUrl = [result valueForKey:@"url"];
+                   NSArray* urlComponents = [originalUrl componentsSeparatedByString:@"%"];
+                   profile.url = [NSURL URLWithString:urlComponents[0]];
                    profile.tbUrl = [NSURL URLWithString:[result valueForKey:@"tbUrl"]];
                    profile.width = [result valueForKey:@"width"];
                    profile.height = [result valueForKey:@"height"];

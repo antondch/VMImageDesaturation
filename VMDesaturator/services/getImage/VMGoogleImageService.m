@@ -28,11 +28,8 @@ static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/sea
 
 
 -(void)fetchDataForImageName:(NSString *)name withCallBackBlock:(CallBackBlock)callBackBlock{
-    NSString *body = [NSString stringWithFormat:@"%@?v=1.0&q=%@&resultFormat=text",APIURL,name];
+    NSString *body = [NSString stringWithFormat:@"%@?v=1.0&q=%@&resultFormat=text&rsz=8",APIURL,name];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:body]];
-//    [request setHTTPMethod:@"POST"];
-//    NSString *body = [NSString stringWithFormat:@"v=1.0&q=%@&resultFormat=text",name];
-//    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     [request addValue:@"www.test.com" forHTTPHeaderField:@"Referer"];
     
     NSURLSessionDataTask *dataTask = [_session dataTaskWithRequest:request completionHandler:
@@ -47,7 +44,7 @@ static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/sea
                                           //         NSString *json = [[NSString alloc] initWithData:data
                                           //                                                encoding:NSUTF8StringEncoding];
                                           //*******
-//                                          callBackBlock(googleResponse);
+                                          callBackBlock(googleResponse);
                                       }];//callback block
     
     [dataTask resume];
