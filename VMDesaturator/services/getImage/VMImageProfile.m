@@ -9,8 +9,10 @@
 #import "VMImageProfile.h"
 
 @implementation VMImageProfile
-@synthesize size = _size;
-@synthesize tbSize = _tbSize;
+@synthesize width = _width;
+@synthesize height = _height;
+@synthesize tbWidth = _tbWidth;
+@synthesize tbHeight = _tbHeight;
 @synthesize url = _url;
 @synthesize tbUrl = _tbUrl;
 @synthesize title = _title;

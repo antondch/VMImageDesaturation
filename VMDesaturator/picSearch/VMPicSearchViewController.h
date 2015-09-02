@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VMImageService.h"
 
-@interface VMPicSearchViewController : UIViewController
-
+@interface VMPicSearchViewController : UIViewController{
+    id<VMImageServiceDelegate> _imageService;
+}
 @end

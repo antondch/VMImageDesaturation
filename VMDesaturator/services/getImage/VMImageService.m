@@ -6,4 +6,3 @@
 //  Copyright (c) 2015 DCH. All rights reserved.
 //
 
-#import "VMImageService.h"

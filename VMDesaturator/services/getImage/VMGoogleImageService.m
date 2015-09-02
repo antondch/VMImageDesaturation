@@ -7,7 +7,7 @@
 //
 
 #import "VMGoogleImageService.h"
-#import "VMImageResponse.h"
+#import "VMGoogleImageResponse.h"
 
 @implementation VMGoogleImageService
 static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/search/images";
@@ -28,10 +28,12 @@ static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/sea
 
 
 -(void)fetchDataForImageName:(NSString *)name withCallBackBlock:(CallBackBlock)callBackBlock{
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:APIURL]];
-    [request setHTTPMethod:@"GET"];
-    NSString *body = [NSString stringWithFormat:@"v=1.0&q=%@",name];
-    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *body = [NSString stringWithFormat:@"%@?v=1.0&q=%@&resultFormat=text",APIURL,name];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:body]];
+//    [request setHTTPMethod:@"POST"];
+//    NSString *body = [NSString stringWithFormat:@"v=1.0&q=%@&resultFormat=text",name];
+//    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    [request addValue:@"www.test.com" forHTTPHeaderField:@"Referer"];
     
     NSURLSessionDataTask *dataTask = [_session dataTaskWithRequest:request completionHandler:
                                       //callback block
@@ -40,12 +42,12 @@ static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/sea
                                               callBackBlock(nil);
                                               return;
                                           }
-                                          VMImageResponse *googleResponse = [[VMImageResponse alloc]initProfileWithData:data];
+                                          VMGoogleImageResponse *googleResponse = [[VMGoogleImageResponse alloc]initProfileWithData:data];
                                           //test***
                                           //         NSString *json = [[NSString alloc] initWithData:data
                                           //                                                encoding:NSUTF8StringEncoding];
                                           //*******
-                                          callBackBlock(googleResponse);
+//                                          callBackBlock(googleResponse);
                                       }];//callback block
     
     [dataTask resume];

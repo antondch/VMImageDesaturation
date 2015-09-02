@@ -14,12 +14,12 @@
     self = [super init];
     if(self){
         NSError *convertError = nil;
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&convertError];
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&convertError];
         if(convertError){
             self.resultCode = otherError;
             return self;
         }
-        NSInteger code = [[dictionary valueForKey:@"responseStatus"]integerValue];
+        NSInteger code = [[response valueForKey:@"responseStatus"]integerValue];
         switch (code){
             case 200:
                 self.resultCode = succsess;
@@ -31,14 +31,16 @@
         }
         if (self.resultCode == succsess){
             @try{
-                NSArray *results = [dictionary valueForKey:@"results"];
+                _privateProfiles = [[NSMutableArray alloc]init];
+                NSArray *responseData = [response valueForKey:@"responseData"];
+                NSArray *results = [responseData valueForKey:@"results"];
                 for(id result in results){
                    VMImageProfile *profile = [[VMImageProfile alloc]init];
                    profile.title = [result valueForKey:@"title"];
                    profile.url = [NSURL URLWithString:[result valueForKey:@"url"]];
                    profile.tbUrl = [NSURL URLWithString:[result valueForKey:@"tbUrl"]];
                    profile.width = [result valueForKey:@"width"];
-                   profile.width = [result valueForKey:@"height"];
+                   profile.height = [result valueForKey:@"height"];
                    profile.tbWidth = [result valueForKey:@"tbWidth"];
                    profile.tbHeight = [result valueForKey:@"tbHeight"];
                     [_privateProfiles addObject:profile];

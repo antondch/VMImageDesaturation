@@ -7,19 +7,34 @@
 //
 
 #import "VMPicSearchViewController.h"
+#import "VMImageResponse.h"
+#import "VMGoogleImageService.h"
+#import "VMImageService.h"
 
 @interface VMPicSearchViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+
 
 @end
 
 @implementation VMPicSearchViewController
 - (IBAction)searchButtonClicked:(id)sender {
+    [self fetchPictures];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self setupServices];
+}
+
+-(void)fetchPictures{
+    if(_imageService && ![self.searchTextField.text isEqualToString:@""]){
+        [_imageService fetchDataForImageName:self.searchTextField.text withCallBackBlock:nil];
+    }
+}
+
+-(void)setupServices{
+    _imageService = [[VMGoogleImageService alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {

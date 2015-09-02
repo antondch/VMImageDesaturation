@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VMImageResponse.h"
 
 @class VMImageResponse;
 
