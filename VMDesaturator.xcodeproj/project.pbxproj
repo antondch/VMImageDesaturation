@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402947361B976C8300962B1A /* VMImageProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 402947351B976C8300962B1A /* VMImageProfile.m */; };
 		406E76A01B96314B00169593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E769F1B96314B00169593 /* main.m */; };
 		406E76A31B96314B00169593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76A21B96314B00169593 /* AppDelegate.m */; };
 		406E76AB1B96314B00169593 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406E76AA1B96314B00169593 /* Images.xcassets */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		402947341B976C8300962B1A /* VMImageProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageProfile.h; path = services/getImage/VMImageProfile.h; sourceTree = "<group>"; };
+		402947351B976C8300962B1A /* VMImageProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMImageProfile.m; path = services/getImage/VMImageProfile.m; sourceTree = "<group>"; };
 		406E769A1B96314B00169593 /* VMDesaturator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMDesaturator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		406E769E1B96314B00169593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406E769F1B96314B00169593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				406E76E11B96408000169593 /* VMGoogleImageService.m */,
 				406E76E31B96439100169593 /* VMGoogleImageResponse.h */,
 				406E76E41B96439100169593 /* VMGoogleImageResponse.m */,
+				402947341B976C8300962B1A /* VMImageProfile.h */,
+				402947351B976C8300962B1A /* VMImageProfile.m */,
 			);
 			name = getimage;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			files = (
 				406E76A31B96314B00169593 /* AppDelegate.m in Sources */,
 				406E76E21B96408000169593 /* VMGoogleImageService.m in Sources */,
+				402947361B976C8300962B1A /* VMImageProfile.m in Sources */,
 				406E76CF1B9633AA00169593 /* VMPicSearchViewController.m in Sources */,
 				406E76DF1B96393B00169593 /* VMImageResponse.m in Sources */,
 				406E76E51B96439100169593 /* VMGoogleImageResponse.m in Sources */,
@@ -476,6 +482,7 @@
 				406E76BF1B96314B00169593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		406E76C01B96314B00169593 /* Build configuration list for PBXNativeTarget "VMDesaturatorTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				406E76C21B96314B00169593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

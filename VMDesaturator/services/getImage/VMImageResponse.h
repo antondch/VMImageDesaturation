@@ -7,17 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import "VMImageService.h"
 
-@interface VMImageResponse : NSObject
-@property (nonatomic) CGSize size;
-@property (nonatomic) CGSize tbSize;
-@property (nonatomic) NSURL *url;
-@property (nonatomic) NSURL *tbUrl;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic) ImageServiceResult result;
+@interface VMImageResponse : NSObject{
+    ImageServiceResult _resultCode;
+    NSMutableArray *_privateProfiles;
+}
 
--(instancetype)initProfileWithData:(NSData*)data NS_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) NSArray *profiles;
+@property (nonatomic) ImageServiceResult resultCode;
+
+-(instancetype)initProfileWithData:(NSData*)data;
 @end
 
