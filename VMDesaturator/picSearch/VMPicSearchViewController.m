@@ -11,20 +11,26 @@
 #import "VMGoogleImageService.h"
 #import "VMImageService.h"
 #import "VMDesaturationViewController.h"
-@interface VMPicSearchViewController ()
+@interface VMPicSearchViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 
 @end
 
 @implementation VMPicSearchViewController
+
 - (IBAction)searchButtonClicked:(id)sender {
     [self fetchPictures];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupComponents];
     [self setupServices];
+}
+
+-(void)setupComponents{
+    self.searchTextField.delegate = self;
 }
 
 -(void)fetchPictures{
@@ -34,13 +40,16 @@
                 VMDesaturationViewController *collectionController = [[VMDesaturationViewController alloc]init];
                 collectionController.imageProfiles = result.profiles;
                 [self.navigationController pushViewController:collectionController animated:YES];
-//                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:collectionController];
-//                navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-//                [self presentViewController:navigationController animated:YES completion:nil];
             });
 
         }];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self fetchPictures];
+    return YES;
 }
 
 -(void)setupServices{
@@ -51,16 +60,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 @end
