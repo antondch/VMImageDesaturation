@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VMImageProfile.h"
 
-@interface VMCollectionViewCell : UICollectionViewCell
-@property (nonatomic , retain) UIImageView *imageView;
+@interface VMCollectionViewCell : UICollectionViewCell{
+    NSData *_raw;
+}
+@property (nonatomic) UIImageView *imageView;
+@property (nonatomic) VMImageProfile *profile;
 @end

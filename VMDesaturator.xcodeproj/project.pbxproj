@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401F06D31B98BD36008B9582 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401F06D21B98BD36008B9582 /* opencv2.framework */; };
+		401F06D71B98C6DF008B9582 /* default-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 401F06D61B98C6DF008B9582 /* default-placeholder.png */; };
 		402947361B976C8300962B1A /* VMImageProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 402947351B976C8300962B1A /* VMImageProfile.m */; };
-		402947391B97852B00962B1A /* VMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 402947381B97852B00962B1A /* VMCollectionViewCell.m */; };
+		402947391B97852B00962B1A /* VMCollectionViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 402947381B97852B00962B1A /* VMCollectionViewCell.mm */; };
 		406E76A01B96314B00169593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E769F1B96314B00169593 /* main.m */; };
 		406E76A31B96314B00169593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 406E76A21B96314B00169593 /* AppDelegate.m */; };
 		406E76AB1B96314B00169593 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406E76AA1B96314B00169593 /* Images.xcassets */; };
@@ -34,10 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401F06D21B98BD36008B9582 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = VMDesaturator/libs/opencv2.framework; sourceTree = "<group>"; };
+		401F06D41B98BDE5008B9582 /* VMDesaturator-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VMDesaturator-Prefix.pch"; sourceTree = "<group>"; };
+		401F06D61B98C6DF008B9582 /* default-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-placeholder.png"; path = "images/default-placeholder.png"; sourceTree = "<group>"; };
 		402947341B976C8300962B1A /* VMImageProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VMImageProfile.h; path = services/getImage/VMImageProfile.h; sourceTree = "<group>"; };
 		402947351B976C8300962B1A /* VMImageProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VMImageProfile.m; path = services/getImage/VMImageProfile.m; sourceTree = "<group>"; };
 		402947371B97852B00962B1A /* VMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMCollectionViewCell.h; sourceTree = "<group>"; };
-		402947381B97852B00962B1A /* VMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCollectionViewCell.m; sourceTree = "<group>"; };
+		402947381B97852B00962B1A /* VMCollectionViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VMCollectionViewCell.mm; sourceTree = "<group>"; };
 		406E769A1B96314B00169593 /* VMDesaturator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMDesaturator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		406E769E1B96314B00169593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406E769F1B96314B00169593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401F06D31B98BD36008B9582 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		401F06D51B98C6D1008B9582 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				401F06D61B98C6DF008B9582 /* default-placeholder.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		406E76911B96314A00169593 = {
 			isa = PBXGroup;
 			children = (
+				401F06D21B98BD36008B9582 /* opencv2.framework */,
 				406E769C1B96314B00169593 /* VMDesaturator */,
 				406E76B61B96314B00169593 /* VMDesaturatorTests */,
 				406E769B1B96314B00169593 /* Products */,
@@ -102,6 +117,7 @@
 		406E769C1B96314B00169593 /* VMDesaturator */ = {
 			isa = PBXGroup;
 			children = (
+				401F06D51B98C6D1008B9582 /* images */,
 				406E76D71B96362E00169593 /* services */,
 				406E76D11B9635B400169593 /* collection */,
 				406E76C31B96325100169593 /* picSearch */,
@@ -119,6 +135,7 @@
 			children = (
 				406E769E1B96314B00169593 /* Info.plist */,
 				406E769F1B96314B00169593 /* main.m */,
+				401F06D41B98BDE5008B9582 /* VMDesaturator-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,7 +173,7 @@
 				406E76D21B9635EA00169593 /* VMDesaturationViewController.h */,
 				406E76D31B9635EA00169593 /* VMDesaturationViewController.m */,
 				402947371B97852B00962B1A /* VMCollectionViewCell.h */,
-				402947381B97852B00962B1A /* VMCollectionViewCell.m */,
+				402947381B97852B00962B1A /* VMCollectionViewCell.mm */,
 			);
 			path = collection;
 			sourceTree = "<group>";
@@ -269,6 +286,7 @@
 				406E76AE1B96314B00169593 /* LaunchScreen.xib in Resources */,
 				406E76D01B9633AA00169593 /* VMPicSearchViewController.xib in Resources */,
 				406E76AB1B96314B00169593 /* Images.xcassets in Resources */,
+				401F06D71B98C6DF008B9582 /* default-placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +310,7 @@
 				406E76CF1B9633AA00169593 /* VMPicSearchViewController.m in Sources */,
 				406E76DF1B96393B00169593 /* VMImageResponse.m in Sources */,
 				406E76E51B96439100169593 /* VMGoogleImageResponse.m in Sources */,
-				402947391B97852B00962B1A /* VMCollectionViewCell.m in Sources */,
+				402947391B97852B00962B1A /* VMCollectionViewCell.mm in Sources */,
 				406E76D51B9635EA00169593 /* VMDesaturationViewController.m in Sources */,
 				406E76DC1B9636AE00169593 /* VMImageService.m in Sources */,
 				406E76A01B96314B00169593 /* main.m in Sources */,
@@ -415,6 +433,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VMDesaturator/libs",
+				);
 				INFOPLIST_FILE = VMDesaturator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +447,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VMDesaturator/libs",
+				);
 				INFOPLIST_FILE = VMDesaturator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

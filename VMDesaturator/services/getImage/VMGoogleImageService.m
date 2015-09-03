@@ -28,7 +28,7 @@ static NSString * const APIURL = @"https://ajax.googleapis.com/ajax/services/sea
 
 
 -(void)fetchDataForImageName:(NSString *)name withCallBackBlock:(CallBackBlock)callBackBlock{
-    NSString *body = [NSString stringWithFormat:@"%@?v=1.0&q=%@&resultFormat=text&rsz=8",APIURL,name];
+    NSString *body = [NSString stringWithFormat:@"%@?v=1.0&q=%@&resultFormat=text&rsz=8&as_filetype=jpg",APIURL,name];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:body]];
     [request addValue:@"www.test.com" forHTTPHeaderField:@"Referer"];
     
