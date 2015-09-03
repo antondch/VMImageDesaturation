@@ -34,7 +34,7 @@
         if(profile.url){
             [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:profile.url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                 UIImage *rawImage = [UIImage imageWithData:data];
-                cv::Mat colorMat = [self cvMatGrayFromUIImage:rawImage];
+                cv::Mat colorMat = [self cvMatFromUIImage:rawImage];
                 cv::Mat greyMat;
                 cv::cvtColor(colorMat, greyMat, CV_BGR2GRAY);
                 UIImage *grayImage = [self UIImageFromCVMat:greyMat];
@@ -48,13 +48,13 @@
     });
 }
 
-- (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image
+- (cv::Mat)cvMatFromUIImage:(UIImage *)image
 {
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
     CGFloat rows = image.size.height;
     
-    cv::Mat cvMat(rows, cols, CV_8UC4); 
+    cv::Mat cvMat(rows, cols, CV_8UC4);
     
     CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to data
                                                     cols,                       // Width of bitmap
