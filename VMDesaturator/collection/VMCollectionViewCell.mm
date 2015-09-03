@@ -54,7 +54,7 @@
     CGFloat cols = image.size.width;
     CGFloat rows = image.size.height;
     
-    cv::Mat cvMat(rows, cols, CV_8UC4); // 8 bits per component, 1 channels
+    cv::Mat cvMat(rows, cols, CV_8UC4); 
     
     CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to data
                                                     cols,                       // Width of bitmap
