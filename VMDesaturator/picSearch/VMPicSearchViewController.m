@@ -34,16 +34,18 @@
 }
 
 -(void)fetchPictures{
-    if(_imageService && ![self.searchTextField.text isEqualToString:@""]){
-        [_imageService fetchDataForImageName:self.searchTextField.text withCallBackBlock:^(VMImageResponse *result){
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                VMDesaturationViewController *collectionController = [[VMDesaturationViewController alloc]init];
-                collectionController.imageProfiles = result.profiles;
-                [self.navigationController pushViewController:collectionController animated:YES];
-            });
-
-        }];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if(_imageService && ![self.searchTextField.text isEqualToString:@""]){
+            [_imageService fetchDataForImageName:self.searchTextField.text withCallBackBlock:^(VMImageResponse *result){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    VMDesaturationViewController *collectionController = [[VMDesaturationViewController alloc]init];
+                    collectionController.imageProfiles = result.profiles;
+                    [self.navigationController pushViewController:collectionController animated:YES];
+                });
+                
+            }];
+        }
+    });
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
