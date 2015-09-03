@@ -26,25 +26,26 @@
     self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
     self.imageView.autoresizingMask = UIViewAutoresizingNone;//UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.imageView];
-//    self.imageView.backgroundColor = [UIColor whiteColor];
     self.imageView.image = [UIImage imageNamed:@"default-placeholder.png"];
 }
 
 -(void)setProfile:(VMImageProfile *)profile{
-    if(profile.url){
-        [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:profile.url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-            UIImage *rawImage = [UIImage imageWithData:data];
-            cv::Mat colorMat = [self cvMatGrayFromUIImage:rawImage];
-            cv::Mat greyMat;
-            cv::cvtColor(colorMat, greyMat, CV_BGR2GRAY);
-            UIImage *grayImage = [self UIImageFromCVMat:greyMat];
-            dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if(profile.url){
+            [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:profile.url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                UIImage *rawImage = [UIImage imageWithData:data];
+                cv::Mat colorMat = [self cvMatGrayFromUIImage:rawImage];
+                cv::Mat greyMat;
+                cv::cvtColor(colorMat, greyMat, CV_BGR2GRAY);
+                UIImage *grayImage = [self UIImageFromCVMat:greyMat];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    self.imageView.image = grayImage;
+                });
                 
-                self.imageView.image = grayImage;
-            });
-            
-        }];
-    }
+            }];
+        }
+    });
 }
 
 - (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image
